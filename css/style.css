@@ -1,0 +1,289 @@
+﻿@charset "utf-8"; /*文字コード指定*/
+
+/* ----- ページ共通の部分 ----- */
+html {
+	font-size: 100%; /* フォントサイズ指定(%はブラウザに設定した標準文字サイズ(通常16px)に対する値)*/
+}
+body {
+	background-color: #ffffff; /*背景色設定*/
+	line-height: 2;	/*行の高さ指定(数値のみの場合はfont-sizeの倍数)*/
+	font-family: "Yu Gothic Medium","游ゴシック Medium","YuGothic","游ゴシック","メイリオ", Meiryo, "ＭＳ Ｐゴシック", Osaka, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro"; /*フォントの種類指定(左から優先順位)*/
+	color: #432; /*文字色指定*/
+}
+a { /*リンクの文字設定(マウスをのせる前)*/
+	text-decoration: none; /*テキストの装飾指定(下線、上線など)(noneはなし)*/
+}
+img {
+	max-width: 100%;
+}
+/* 文章の設定*/
+.moji-title {
+	/* */
+}
+.moji{
+	text-indent: 1em;/*文章の文字の先頭に空白段落(インデント？)*/
+}
+
+
+/* ----- ヘッダー(ページの一番上の部分) ----- */
+.logo { /*SVG表示サイズ設定*/
+	width: 100px;
+	margin-top: 14px;
+}
+
+.main-nav {
+	display: flex;
+	font-size: 1.25rem;
+	text-transform: uppercase;
+	margin-top: 34px;
+	list-style: none;
+}
+.main-nav li {
+	margin-left: 36px;
+}
+.main-nav a {
+	color: #432;
+}
+.main-nav a:hover { /*リンクの文字設定(マウスをのせた時)*/
+	text-decoration: underline; /*テキストの装飾指定(下線、上線など)(underlineは下線を引く)*/
+	color: #0bd;
+}
+
+.page-header {
+	display: flex;
+	justify-content: space-between;
+}
+
+.wrapper {
+	max-width: 1100px; /* 表示横幅MAX1100pxの指定*/
+	margin: 0 auto; /* 中央に表示する設定*/
+	padding: 0 4%; /* スマホ向けの左右の余白*/
+}
+
+/* 大きな画像の表示
+------------------------------- */
+.big-bg{
+	background-size: cover; /* 画面の縦横比を保持し表示する*/
+	background-position: center top;
+	background-repeat: no-repeat;
+}
+
+/* ページタイトル
+------------------------------- */
+.page-title {
+	font-size: 3rem;
+	font-family: 'Philosopher',serif;
+	text-transform: uppercase;
+	font-weight: normal;
+}
+
+#APoint {
+	background-image: url(../images/news-bg.jpg);
+	height: 270px;/*背景画像の表示領域サイズ(数字を大きく-->下まで表示)*/
+	margin-bottom: 40px;
+}
+#APoint .page-title {
+	text-align: center;
+}
+
+/* アピールポイントコンテンツ
+------------------------------- */
+/* メインコンテンツ*/
+article {
+	width: 74%; /*表示領域の指定*/
+}
+
+/*ここからタイトルスタイル*/
+.post-info{
+	position: relative; /*要素の位置決め(relative;->相対位置)*/
+	padding-top: 4px;
+	margin-bottom: 40px;
+}
+.post-data{
+	background: #0bd; /*背景*/
+	border-radius: 50%;/*角丸*/
+	color: #fff;/*文字色*/
+	width: 100px;/*図形横幅*/
+	height: 100px;/*図形高さ*/
+	font-size: 1.65rem;/*日付フォントサイズ*/
+	text-align: center;/*テキストの位置*/
+	/* .post-infoからの絶対位置と調整の指定*/
+	position: absolute;/*日付を左上へ*/
+	top: 0;/*図形の表示位置(数字大きい-->下に移動)*/
+	padding-top: 7px;/*文字全体の表示位置(数字大きい-->下に移動)*/
+}
+.post-data span{
+	font-size: 0.825rem;/*2021表示サイズ*/
+	border-top: 1px rgba(255,255,255,.5) solid; /*中心線の表示 rgba(color,color,color,不透明度の指定)*/
+	padding-top: 4px;/*2021表示位置(大きい数字-->下に移動)*/ 
+	display: block;
+	width: 60%;/*中心バーの表示する横幅領域のパーセンテージ*/
+	margin: 0 auto;
+}
+.post-title {
+    font-family: "Yu Mincho", "YuMincho", serif;
+    font-size: 1.625rem;
+    font-weight: normal;
+}
+.post-title,
+.post-cat {
+    margin-left: 120px;
+}
+/*ここからタイトル以下*/
+article img {
+	margin-bottom: 20px;
+}
+article p {
+	margin-bottom: 1rem;
+}
+
+/* サイドバー*/
+aside {
+	width: 22%; /*表示領域の指定*/
+}
+
+.APoint-contents {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 50px;
+}
+.sub-title {
+	font-size: 1.375rem;/*文字サイズ*/
+	padding: 0 8px 8px;/*余白*/
+	border-bottom: 2px #0bd solid;/*下線の設定(線の大きさ,色,線の種類)*/
+	font-weight: normal;
+}
+.sub-menu {
+	margin-bottom: 60px;
+	list-style: none;/*リストの丸を非表示に(none)*/
+}
+.sub-menu li {
+	border-bottom: 1px #ddd solid;/*下線の設定(線の大きさ,色,線の種類)*/
+}
+.sub-menu a {
+	color: #432;
+	padding: 10px;
+	display: block;/*リンクのクリックできる範囲を広げる*/
+}
+.sub-menu a:hover {
+	color: #0bd;/*カーソルを合わせたときの色*/
+}
+
+
+aside p {
+	padding: 12px 10px;/*文章の要素の内側に余白を付ける*/
+}
+
+/* フッター
+------------------------------- */
+footer { /*フッターの指定*/
+	background: #432;
+	position: fixed; /*ボックスの配置方法(fixedは固定)*/
+	text-align: center;
+	bottom: 0; /*下からの距離*/
+	height: 40px; /*領域の高さ指定*/
+	width: 100%; /*幅指定(100%は画面横幅いっぱいに表示)*/
+}
+footer p { /*フッターの文章の指定*/
+	color: #fff;
+	margin-top: 10px; /*ボックス外側上の余白*/
+	text-align: center; /*行の水平方向の揃え方(centerは中央揃え)*/
+	font-size: 0.75em; /*フォントサイズ指定(emはフォントの高さを１とした相対指定)*/
+}
+
+/* スマホ表示
+------------------------------- */
+@media (max-width: 600px){
+	
+	/*HEADER*/
+	.main-nav{
+		font-size: 1rem;
+		margin-top: 10px;
+	}
+	.main-nav li{
+		margin: 0 20px;
+	}
+	/*HOME*/
+	.APoint-contents{
+		margin-top: 0%;/*メインコンテンツ 表示領域 数値大きく-->下に移動*/
+	}
+
+	/* ここからメインコンテンツ設定
+	----------------------------- */
+	/* ナビレイアウト*/
+	.main-nav {
+		font-size: 0.625rem;/*ナビ文字サイズ*/
+	}
+	.page-header{
+		flex-direction: column;/*横並び-->縦並びへ変更*/
+		align-items: center;
+	}
+	/* メインレイアウト*/
+	.APoint-contents{
+		flex-direction: column;/*横並び-->縦並びへ変更*/
+	}
+
+	article,
+	aside{
+		width: 100%;
+	}
+
+	/* 文章の設定*/
+	.moji-title {
+		/* */
+		font-size: 0.925rem;/*文章タイトル 文字サイズ*/
+	}
+	.moji{
+		font-size: 0.825rem;/*文章の文字サイズ*/
+	}
+	/* メイン詳細レイアウト*/
+	#APoint .page-title{
+		margin-top: 25px; /*数字を小く-->上に移動*/
+		font-size: 1.25rem; /*タイトル文字サイズ*/
+	}
+
+	aside {
+		margin-top: 60px;
+	}
+	.post-info {
+		margin-bottom: 30px;
+	}
+	.post-data {
+		margin-top: 2px;/*図形の表示位置 数値大きく-->下にさがる*/
+		width: 70px;/*図形の大きさ 横*/
+		height: 70px;/*図形の大きさ 縦*/
+		font-size: 0.925rem;/*月日文字サイズ*/
+	}
+	.post-data span {
+		font-size: 0.725rem;/*2021表示サイズ*/
+		border-top: 1px rgba(255,255,255,.5) solid; /*中心線の表示 rgba(color,color,color,不透明度の指定)*/
+		padding-top: 2px;/*2021表示位置(大きい数字-->下に移動)*/ 
+	}
+	.post-title {
+		font-size: 1.125rem;
+	}
+	.post-cat {
+		font-size: 0.725rem;
+		margin-top: 10px;
+	}
+	.post-title,
+	.post-cat {
+		margin-left: 80px;
+	}
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
