@@ -16,6 +16,10 @@ a { /*リンクの文字設定(マウスをのせる前)*/
 img {
 	max-width: 100%;
 }
+.mp4 {
+	margin-top: 14px;
+	width: 100%;
+}
 
 /* 文章の設定*/
 .moji-title {
