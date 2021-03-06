@@ -16,6 +16,11 @@ a { /*リンクの文字設定(マウスをのせる前)*/
 img {
 	max-width: 100%;
 }
+.mp4 {
+	margin-top: 14px;
+	width: 100%;
+}
+
 /* 文章の設定*/
 .moji-title {
 	/* */
@@ -132,12 +137,11 @@ article {
 }
 /*ここからタイトル以下*/
 article img {
-	margin-bottom: 20px;
+	margin-bottom: 20px;/*全体のimgに作用しているので要注意*/
 }
 article p {
 	margin-bottom: 1rem;
 }
-
 /* サイドバー*/
 aside {
 	width: 22%; /*表示領域の指定*/
@@ -189,7 +193,7 @@ aside p {
 	border-bottom: 1px #ddd solid;/*下線の設定(線の大きさ,色,線の種類)*/
 }
 .CodeIoT {
-	style="height: 435px; 
+	height: 435px; 
 	box-sizing: border-box; 
 	display: flex; 
 	align-items: center; 
@@ -201,57 +205,108 @@ aside p {
 
 /*PCB 3D Viewer*/
 .PCBitemMain {/*6:4にしたがやり方わからず*/
-	border-radius: 0px 0px 4px 4px; 
-	height: 500px; 
-	border-style: solid; 
-	border-width: 1px; 
-	border-color: rgb(241, 241, 241); 
+	border-radius: 0px 0px 4px 4px; /*線*/
+	height: 500px; /*線*/
+	border-style: solid; /*線*/
+	border-width: 1px; /*線*/
+	border-color: rgb(241, 241, 241); /*線*/
 	overflow: hidden; 
-	max-width: 980px; 
-	max-height: 700px; 
-	box-sizing: border-box;"
+	max-width: 1280px; 
+	max-height: 900px; 
+	box-sizing: border-box;/*??*/
 }
 
 .PCBitem {
-	border-radius: 0px 0px 4px 4px; 
-	height: 500px; 
-	border-style: solid; 
-	border-width: 1px; 
-	border-color: rgb(241, 241, 241); 
+	border-radius: 0px 0px 4px 4px;/*線*/
+	height: 500px; /*線*/
+	border-style: solid; /*線*/
+	border-width: 1px; /*線*/
+	border-color: rgb(241, 241, 241); /*線*/
 	overflow: hidden; 
 	max-width: 1280px; 
-	max-height: 700px; 
-	box-sizing: border-box;"
+	max-height: 500px; 
+	box-sizing: border-box;/*??*/
 }
+
 
 
 /*グループ紹介のテーブル*/
 .tbl {/* .tbl-r02 全体設定 */
 	table-layout: fixed;
-	border-collapse: collapse; /*境界線の表示指定(collapseは重ねて表示)*/
-	margin: 0 auto; /*ボックス外側の余白(値2つは左から上下,左右の値(左右autoで中央配置))*/
-	margin-top: 10px;
+	border-collapse: separate; /*境界線の表示指定(collapseは重ねて表示)*/
+	margin: 10 auto; /*ボックス外側の余白(値2つは左から上下,左右の値(左右autoで中央配置))*/
+	margin-top: 20px;
+	margin-bottom: 20px;/*全体のtblに作用しているので要注意*/
 }
 .tbl tr {
 	/**/
+
 }
 .tbl th {/* 見出しth*/
   background: #2A83C1;/*-- テーブル背景カラーブル2A83C1ー--*/
-  border: solid 0.8px #ccc;/*境界線の一括指定(solidは1本線,線の太さ,線の色)*/
+  /*border: solid 0.8px #ccc;/*境界線の一括指定(solidは1本線,線の太さ,線の色)*/
   color: #fff; /*-- テーブルFontカラーWhite--*/
-  padding: 10px;
+  padding: 8px;/*図形の大きさ*/
   text-align: center; /*行の水平方向の揃え方(leftは左寄せ)*/
-
+  border-radius: 100vh;/*丸角にする*/
+  width: 25%;/*表示比率*/
 }
+
+
 .tbl td {/* 内容td */
+	font-size: 0.925rem;
   border: solid 1px #888084; /*境界線の一括指定(solidは1本線,線の太さ,線の色) */
   padding: 10px;
   text-align: left; /*行の水平方向の揃え方(leftは左寄せ)*/
+  width: 65%;/*表示比率*/
 }
+
+/*tbl-img*/
+.tbl-img img {
+	margin-bottom: 0px;
+}
+
+
+/* #photo */
+#photo .swiper-my-pagination .swiper-pagination-bullet {
+  width: auto;
+  height: auto;
+  border-radius: 0;
+}
+#photo .swiper-container-horizontal > .swiper-my-pagination.swiper-pagination-bullets .swiper-pagination-bullet {
+  margin: 0;
+}
+#photo .swiper-my-pagination img {
+  box-shadow: none;
+  margin: 0;
+  vertical-align: bottom;
+}
+#photo .swiper-my-pagination {
+  display: table;
+}
+#photo .swiper-my-pagination {
+  display: table;
+  table-layout: fixed;
+}
+#photo .swiper-my-pagination .swiper-pagination-bullet {
+  display: table-cell;
+  padding: 2px;
+  background: transparent;
+  opacity: 1;
+}
+#photo .swiper-my-pagination .swiper-pagination-bullet-active {
+  background: transparent;
+  opacity: 0.6;
+}
+
 
 
 /* フッター
 ------------------------------- */
+#footer {
+	z-index: 9999;
+}
+
 footer { /*フッターの指定*/
 	background: #432;
 	position: fixed; /*ボックスの配置方法(fixedは固定)*/
@@ -268,7 +323,7 @@ footer p { /*フッターの文章の指定*/
 }
 
 /* スマホ表示
-------------------------------- */
+--------------------------------------------------------------------------------------- */
 @media (max-width: 600px){
 	
 	/*HEADER*/
@@ -304,6 +359,22 @@ footer p { /*フッターの文章の指定*/
 		width: 100%;
 	}
 
+
+	/*スライド写真の<>削除*/
+	.swiper-button-prev,
+	.swiper-button-next {
+	  width: 32px;
+	  height: 32px;
+	  margin-top: -16px;
+	}
+	.swiper-button-prev::after {
+	    content: "";
+	}
+	.swiper-button-next::after {
+	    content: "";
+	}
+
+
 	/* 文章の設定*/
 	.moji-title {
 		/* */
@@ -317,6 +388,19 @@ footer p { /*フッターの文章の指定*/
 		margin-top: 25px; /*数字を小く-->上に移動*/
 		font-size: 1.25rem; /*タイトル文字サイズ*/
 	}
+
+	/*グループ紹介のテーブル*/
+	
+	.tbl tr {
+		/**/
+	}
+	.tbl th {/* 見出しth*/
+		font-size: 0.75rem;
+	}
+	.tbl td {/* 内容td */
+	  font-size: 0.75rem;
+	}
+	
 
 	aside {
 		margin-top: 60px;

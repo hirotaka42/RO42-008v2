@@ -10,10 +10,14 @@
 <!-- CSS -->
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
     <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet" type="text/css" /><!-- CSS読み込み -->
+    
     <link href="css/lightbox.css" rel="stylesheet" type="text/css" /><!-- これは？ CSS読み込み -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://viewer.altium.com/client/static/js/embed.js"></script><!-- PCB Viewer -->
+
+    <link href="css/swiper-bundle.min.css" rel="stylesheet" type="text/css" /><!-- CSS読み込み -->
+    <link href="css/style.css" rel="stylesheet" type="text/css" /><!-- CSS読み込み -->
+    <script src="js/swiper-bundle.min.js"></script>
   </head>
 
   <body>
@@ -21,6 +25,10 @@
       <!--【RO42-008】【作品名:汎用ロボットアーム】-->
       <!--　ヘッダー（サイト名やサイトの内容を示す部分）　-->
       <header class="page-header wrapper">
+        
+
+
+
         <h1><a href="index.html"><img class="logo" src="images/logo.svg" alt="RO42-008"></a>
         </h1><!-- / #logo -->
         <nav>
@@ -28,9 +36,9 @@
       	  <ul class="main-nav">
       	   <li><a href="#page-header">Home</a></li>
       	   <li><a href="#category1">作品説明</a></li>
-      	   <li><a href="#category2">アピールポイント</a></li>
-           <li><a href="#category3">感想</a></li>
-      	   <li><a href="#category4">写真・動画</a></li>
+      	   <li><a href="#category3">アピールポイント</a></li>
+           <li><a href="#category4">感想</a></li>
+      	   <li><a href="#category5">写真・動画</a></li>
       	  </ul>
       	</nav>
       </header><!-- / header -->
@@ -52,49 +60,93 @@
           <p class="post-data">3/4~<span>2021</span></p>
           <p class="post-cat">カテゴリー：#Event</p>
         </header>
-        <img src="images/thumb.png" alt="メイン画像">
 
-        <div class="category1">
+
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide" style="text-align : center;"><img class="sw-img" src="images/thumb.png" alt="メイン画像-Swiper01"></div>
+            <div class="swiper-slide" style="text-align : center;"><img class="sw-img" src="images/thumb.png" alt="Swiper02"></div>
+            <div class="swiper-slide" style="text-align : center;"><img class="sw-img" src="images/thumb.png" alt="Swiper03"></div>
+          </div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div><!-- /.swiper-container  -->
+
+        <script>
+          var swiper = new Swiper('.swiper-container', {
+            navigation: {
+              nextEl: '.swiper-button-next',
+              prevEl: '.swiper-button-prev',
+            },
+            loop: true,
+            autoplay: {
+              delay: 3000,
+              disableOnInteraction: true,
+            },
+            pagination: {
+              el: '.swiper-pagination',
+              type: 'bullets',
+              clickable: true,
+            },
+          });
+        </script>
+
+        <div id="category1">
           <h3 class="sub-title">プロジェクトの背景</h3>
           <p class="moji">今回のHEWではグループメンバ各個人が制作したいものを組み合わせて一つの作品を作ることを目標に制作しました。 役割分担に重点を置き、一人は詳細な3Dモデルの制作, 二人目は操作方法の策定, 三人目はプログラムの策定, これらを軸にしそれぞれが意見を出し合い、個人の実力を一番発揮できるところでそれぞれが個々に制作する。また相手の意見をできるだけ取り入れどうしたら実現できるかに注視しながら作業し、その結果できるだけアイディアに忠実な制作物が完成しました。<br>
           </p>
         </div><!-- /#category1 -->
 
-        <div class="category2">
+        <div id="category2">
           <h3 class="sub-title">作品説明</h3>
-
           <table class="tbl">
             <tr>
               <th class="tbl-1" colspan="2">基本情報</th>
             </tr>
             <tr>
-              <th>出展者番号</th>
+              <th class="tbl-2">出展者番号</th>
               <td>RO42-008</td>
             </tr>
             <tr>
-              <th>作品名</th>
+              <th class="tbl-2">作品名</th>
               <td>汎用ロボットアーム</td>
             </tr>
             <tr>
-              <th>グループ名</th>
+              <th class="tbl-2">グループ名</th>
               <td>ESP32</td>
             </tr>
             <tr>
-              <th>メンバーリスト</th>
+              <th class="tbl-3">メンバーリスト</th>
               <td> 佐藤 航 / 洪 イ昕 / 兒玉 裕貴 </td>
             </tr>
             <tr class="last">
-              <th>作品アピール</th>
-              <td>5つの操作方法, 3Dデザインを使用したロボットアームの制作, 自作プリント基板の制作</td>
+              <th class="tbl-4">作品アピール</th>
+              <td>5つの操作方法, 3Dデザインでのパーツ設計, 自作プリント基板の制作</td>
             </tr>
-          </table>
+          </table><!-- /.tbl -->
+
+
+          
+
+
+
 
           <p class="moji">私達は汎用ロボットアームすべての部品を3Dモデリングで制作しました。このロボットアームの大きな特徴は関節を各所に配置することにより最大5軸ロボットアームとして起動します。主な動作としてはモノを掴む離すはもちろん左右前前後お好みの位置へ移動させることが可能です。また、様々な操作方法を実装したので操作者の好みの操作方法で動作できます。<br><br>このロボットアームのコアは Arduino Mega2560 を使用しています。なぜ Arduino UNO ではなく Mega を使用したか,これは単純にPin数の制限を受けたからです。このロボットアームの使用しているPin数は電源とGNDを除きおおよそ36Pin. 今回使用しなかった Arudino UNO のPin数は ディジタルPin 14Pin, アナログ入力 6Pin 総合計20Pin, それに引き換え ArduinoMega2560 は ディジタル 54Pin( 14本は PWM 使用可能), アナログ入力 16Pin, 総合計70Pin, このピン数はとても魅力的でした。<br><br>
-          操作方法は全部で5つあります。　ジョイスティックによるリモコン操作, ボリュームによるつまみ操作, 1つの機体で他の機体を連動させて動かせるマスタースレーブ操作, 動作を記録し再生する位置記憶動作, ネットワーク経由でWeb操作をするIot操作, それぞれが各々で作りたかった操作方法で一切の妥協なく制作しました。 次のアピール項目ではこの操作方法の説明とその他取り組んだことについて説明していきます。 
+
+          操作方法は全部で5つあります。
+          ジョイスティックによるリモコン操作, ボリュームによるつまみ操作, 1つの機体で他の機体を連動させて動かせるマスタースレーブ操作, 動作を記録し再生する位置記憶動作, ネットワーク経由でWeb操作をするIot操作, それぞれが各々で作りたかった操作方法で一切の妥協なく制作しました。 次のアピール項目ではこの操作方法の説明とその他取り組んだことについて説明していきます。 
           </p>
+          <table class="tbl-img" border="1" cellspacing="0" cellpadding="1">
+                <tr>
+                  <td><img src="images/img_ControlPanel-min.jpg" alt="ControlPanel"/></td>
+                  <td><img src="images/img_ControlPanelRaw-min.jpg" alt="ControlPanelRaw"/></td>
+                </tr>
+          </table><br>
+          
         </div><!-- /#category2 -->
 
-        <div class="category3">
+        <div id="category3">
           <h3 class="sub-title">アピールポイント</h3>
           <p class="moji">アピールポイントとして5つの操作方法, 3Dデザインを使用したロボットアームの制作, 自作プリント基板の制作, の3つがあります。<br>
 
@@ -117,19 +169,22 @@
                 <p class="moji">操作にはobnizOS(オブナイズ)を使用しました。obnizOSを使用することでIoT操作で一番面倒なweb Server通信のプログラム作成が不要でネットワークコネクションを作るだけで気軽にマイコンを制御できます。
                 このobnizOSは主にhtmlとjavascriptでの記述で操作ができるため少しだけWebの知識があれば誰でもモノづくりを体験することが可能です。
                 今回これらを活用しアームの操作軸となるサーボモータの制御をWeb経由のスライダーコントロールで操作出来るようにしました。<br></p>
+                <video class="mp4" src="images/video_iot.mp4" loop autoplay muted  playsinline></video>
                 <p class="CodeIoT codepen" data-height="435" data-theme-id="light" data-default-tab="html,result" data-user="hirotaka42" data-slug-hash="JjbLPqP" data-pen-title="RO42-008">
                   <span>See the Pen <a href="https://codepen.io/hirotaka42/pen/JjbLPqP">
                   RO42-008</a> by hirotaka42 (<a href="https://codepen.io/hirotaka42">@hirotaka42</a>)
                   on <a href="https://codepen.io">CodePen</a>.</span>
                 </p>
                 <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+
             </ol><br><!-- /.APointsub-title -->
 
             <h3 class="APoint-title">アピールポイント2</h3>
             <ol class="APointsub-title">
                 <li>3Dデザインを使用したロボットアームの制作</li>
                 <p class="moji">3DCADソフト Fusion360 を使用し3Dモデルデータを作成,3Dプリンタで印刷,すべての部品を手作りで制作しました。その過程で穴の位置の設置ミスや印刷クオリティの向上で四苦八苦することがありました。<br></p>
-                <table border="1" cellspacing="0" cellpadding="1">
+                
+                <table class="tbl-img" border="1" cellspacing="0" cellpadding="1">
                 <tr>
                   <td><img src="images/3D_model01-min.png" width=100% alt="3D_model01-min"/></td>
                   <td><img src="images/3D_model02-min.png" width=100% alt="3D_model02-min"/></td>
@@ -137,8 +192,9 @@
                 </tr>
                 </table><br>
 
-                <table border="1" cellspacing="0" cellpadding="1">
-                <td><img src="images/3D_model04-min.png" width=100% alt="3D_model04-min"/></td>
+                <table class="tbl-img" border="1" cellspacing="0" cellpadding="1">
+                <tr>
+                  <td><img src="images/3D_model04-min.png" width=100% alt="3D_model04-min"/></td>
                   <td><img src="images/3D_model05-min.png" width=100% alt="3D_model05-min"/></td>
                   <td><img src="images/3D_model06-min.png" width=100% alt="3D_model06-min"/></td>
                   <td><img src="images/3D_model07-min.png" width=100% alt="3D_model07-min"/></td>
@@ -146,7 +202,7 @@
                 </table><br>
                 <li>基板配線</li>
                 <p class="moji">配線については電源系統を一つにまとめできるだけ簡素化しました。また配線の再配置など柔軟に対応するべく広く一般的に使用されているJST規格のXHコネクタを採用。<br></p>
-                <table border="1" cellspacing="0" cellpadding="1">
+                <table class="tbl-img" border="1" cellspacing="0" cellpadding="1">
                 <tr>
                   <td><img src="images/img_PCB_main.jpg" width=100% alt="PCB_main"/></td>
                   <td><img src="images/img_PCB_sub.jpg" width=100% alt="PCB_sub"/></td>
@@ -167,16 +223,43 @@
           </p>
         </div><!-- /#category3 -->
 
-        <div class="category4">
+        <div id="category4">
           <h3 class="sub-title">感想</h3>
           <p class="moji">今回のHEWは例年と違いオンラインでの制作が多かったためお互いの進捗確認がうまく取れずとても苦労しました。ですが精一杯自分たちに納得の行く作品ができたのでとても良い経験になりました！<br>
           </p>
         </div><!-- /#category4 -->
 
-        <div class="category5">
+        <div id="category5">
           <h3 class="sub-title">Photo</h3>
           <p class="moji">写真・動画<br>
           </p>
+
+          <div id="photo">
+            <div class="swiper-container">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="https://haniwaman.com/wp/wp-content/uploads/2018/05/swiper01.png" alt=""></div>
+                <div class="swiper-slide"><img src="https://haniwaman.com/wp/wp-content/uploads/2018/05/swiper02.png" alt=""></div>
+                <div class="swiper-slide"><img src="https://haniwaman.com/wp/wp-content/uploads/2018/05/swiper03.png" alt=""></div>
+              </div>
+              <div class="swiper-my-pagination"></div>
+            </div>
+
+            <script type="text/javascript">
+              var swiper = new Swiper('.swiper-container', {
+                pagination: {
+                  el: '.swiper-my-pagination',
+                  clickable: true,
+                  renderBullet: function (index, className) {
+                    return '<span class="' + className + '">' + '<img src="https://haniwaman.com/wp/wp-content/uploads/2018/05/swiper-thumbnail' + (index + 1) + '.png" alt="">' + '</span>';
+                  },
+                },
+              });
+            </script>
+          </div><!-- /#photo-->
+
+
+
+
         </div><!-- /#category5 -->
 
 
@@ -210,11 +293,13 @@
 
 
     <!--　ここからフッター -->
-    <footer>
-      <div class="wrapper">
-        <p><small>2021 HAL東京 先端ロボット開発学科 Hal Event Week </small></p>
-      </div>
-    </footer>
+    <div id="footer">
+      <footer>
+        <div class="wrapper">
+          <p><small>2021 HAL東京 先端ロボット開発学科 Hal Event Week </small></p>
+        </div>
+      </footer>
+    </div>
 
 
 
