@@ -21,6 +21,7 @@ img {
 	/* */
 }
 .moji{
+	margin-top: 14px;
 	text-indent: 1em;/*文章の文字の先頭に空白段落(インデント？)*/
 }
 
@@ -174,6 +175,81 @@ aside p {
 	padding: 12px 10px;/*文章の要素の内側に余白を付ける*/
 }
 
+/*アピールポイント操作方法*/
+.APoint-title{
+	/**/
+}
+
+.APointsub-title {
+	list-style-position: inside;/*内側に表示*/
+	list-style-type: decimal;/*数字を表示*/
+}
+
+.APointsub-title li {
+	border-bottom: 1px #ddd solid;/*下線の設定(線の大きさ,色,線の種類)*/
+}
+.CodeIoT {
+	style="height: 435px; 
+	box-sizing: border-box; 
+	display: flex; 
+	align-items: center; 
+	justify-content: center; 
+	border: 2px solid; 
+	margin: 1em 0; 
+	padding: 1em;
+}
+
+/*PCB 3D Viewer*/
+.PCBitemMain {/*6:4にしたがやり方わからず*/
+	border-radius: 0px 0px 4px 4px; 
+	height: 500px; 
+	border-style: solid; 
+	border-width: 1px; 
+	border-color: rgb(241, 241, 241); 
+	overflow: hidden; 
+	max-width: 980px; 
+	max-height: 700px; 
+	box-sizing: border-box;"
+}
+
+.PCBitem {
+	border-radius: 0px 0px 4px 4px; 
+	height: 500px; 
+	border-style: solid; 
+	border-width: 1px; 
+	border-color: rgb(241, 241, 241); 
+	overflow: hidden; 
+	max-width: 1280px; 
+	max-height: 700px; 
+	box-sizing: border-box;"
+}
+
+
+/*グループ紹介のテーブル*/
+.tbl {/* .tbl-r02 全体設定 */
+	table-layout: fixed;
+	border-collapse: collapse; /*境界線の表示指定(collapseは重ねて表示)*/
+	margin: 0 auto; /*ボックス外側の余白(値2つは左から上下,左右の値(左右autoで中央配置))*/
+	margin-top: 10px;
+}
+.tbl tr {
+	/**/
+}
+.tbl th {/* 見出しth*/
+  background: #2A83C1;/*-- テーブル背景カラーブル2A83C1ー--*/
+  border: solid 0.8px #ccc;/*境界線の一括指定(solidは1本線,線の太さ,線の色)*/
+  color: #fff; /*-- テーブルFontカラーWhite--*/
+  padding: 10px;
+  text-align: center; /*行の水平方向の揃え方(leftは左寄せ)*/
+
+}
+.tbl td {/* 内容td */
+  border: solid 1px #888084; /*境界線の一括指定(solidは1本線,線の太さ,線の色) */
+  padding: 10px;
+  text-align: left; /*行の水平方向の揃え方(leftは左寄せ)*/
+}
+
+
 /* フッター
 ------------------------------- */
 footer { /*フッターの指定*/
@@ -264,7 +340,7 @@ footer p { /*フッターの文章の指定*/
 	}
 	.post-cat {
 		font-size: 0.725rem;
-		margin-top: 10px;
+		margin-top: 0px;
 	}
 	.post-title,
 	.post-cat {

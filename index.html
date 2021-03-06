@@ -29,7 +29,8 @@
       	   <li><a href="#page-header">Home</a></li>
       	   <li><a href="#category1">作品説明</a></li>
       	   <li><a href="#category2">アピールポイント</a></li>
-      	   <li><a href="#category3">写真・動画</a></li>
+           <li><a href="#category3">感想</a></li>
+      	   <li><a href="#category4">写真・動画</a></li>
       	  </ul>
       	</nav>
       </header><!-- / header -->
@@ -52,26 +53,157 @@
           <p class="post-cat">カテゴリー：#Event</p>
         </header>
         <img src="images/thumb.png" alt="メイン画像">
-        <p class="moji-title">【プロジェクトの背景】<br></p>
-        <p class="moji">今回のHEWではグループメンバ各個人が制作したいものを組み合わせて一つの作品を作ることを目標に制作しました。 役割分担に重点を置き、一人は詳細な3Dモデルの制作, 二人目は操作方法の策定, 三人目はプログラムの策定, これらを軸にしそれぞれが意見を出し合い、個人の実力を一番発揮できるところでそれぞれが個々に制作する。また相手の意見をできるだけ取り入れどうしたら実現できるかに注視しながら作業し、その結果できるだけアイディアに忠実な制作物が完成しました。<br>
-        </p>
+
+        <div class="category1">
+          <h3 class="sub-title">プロジェクトの背景</h3>
+          <p class="moji">今回のHEWではグループメンバ各個人が制作したいものを組み合わせて一つの作品を作ることを目標に制作しました。 役割分担に重点を置き、一人は詳細な3Dモデルの制作, 二人目は操作方法の策定, 三人目はプログラムの策定, これらを軸にしそれぞれが意見を出し合い、個人の実力を一番発揮できるところでそれぞれが個々に制作する。また相手の意見をできるだけ取り入れどうしたら実現できるかに注視しながら作業し、その結果できるだけアイディアに忠実な制作物が完成しました。<br>
+          </p>
+        </div><!-- /#category1 -->
+
+        <div class="category2">
+          <h3 class="sub-title">作品説明</h3>
+
+          <table class="tbl">
+            <tr>
+              <th class="tbl-1" colspan="2">基本情報</th>
+            </tr>
+            <tr>
+              <th>出展者番号</th>
+              <td>RO42-008</td>
+            </tr>
+            <tr>
+              <th>作品名</th>
+              <td>汎用ロボットアーム</td>
+            </tr>
+            <tr>
+              <th>グループ名</th>
+              <td>ESP32</td>
+            </tr>
+            <tr>
+              <th>メンバーリスト</th>
+              <td> 佐藤 航 / 洪 イ昕 / 兒玉 裕貴 </td>
+            </tr>
+            <tr class="last">
+              <th>作品アピール</th>
+              <td>5つの操作方法, 3Dデザインを使用したロボットアームの制作, 自作プリント基板の制作</td>
+            </tr>
+          </table>
+
+          <p class="moji">私達は汎用ロボットアームすべての部品を3Dモデリングで制作しました。このロボットアームの大きな特徴は関節を各所に配置することにより最大5軸ロボットアームとして起動します。主な動作としてはモノを掴む離すはもちろん左右前前後お好みの位置へ移動させることが可能です。また、様々な操作方法を実装したので操作者の好みの操作方法で動作できます。<br><br>このロボットアームのコアは Arduino Mega2560 を使用しています。なぜ Arduino UNO ではなく Mega を使用したか,これは単純にPin数の制限を受けたからです。このロボットアームの使用しているPin数は電源とGNDを除きおおよそ36Pin. 今回使用しなかった Arudino UNO のPin数は ディジタルPin 14Pin, アナログ入力 6Pin 総合計20Pin, それに引き換え ArduinoMega2560 は ディジタル 54Pin( 14本は PWM 使用可能), アナログ入力 16Pin, 総合計70Pin, このピン数はとても魅力的でした。<br><br>
+          操作方法は全部で5つあります。　ジョイスティックによるリモコン操作, ボリュームによるつまみ操作, 1つの機体で他の機体を連動させて動かせるマスタースレーブ操作, 動作を記録し再生する位置記憶動作, ネットワーク経由でWeb操作をするIot操作, それぞれが各々で作りたかった操作方法で一切の妥協なく制作しました。 次のアピール項目ではこの操作方法の説明とその他取り組んだことについて説明していきます。 
+          </p>
+        </div><!-- /#category2 -->
+
+        <div class="category3">
+          <h3 class="sub-title">アピールポイント</h3>
+          <p class="moji">アピールポイントとして5つの操作方法, 3Dデザインを使用したロボットアームの制作, 自作プリント基板の制作, の3つがあります。<br>
+
+            <h3 class="APoint-title">操作方法</h3>
+            <ol class="APointsub-title">
+                <li>ジョイスティックによる操作</li>
+                <p class="moji">ジョイスティックによる操作を実装した理由はやはり慣れ親しんだ操作感で操作できることにあります。3DCADソフトでの設計によりパーツの交換、修正、複製などが素早く行え誰でも気軽にモノづくりを体験することが可能になります。<br></p>
+                <a href="images/gif_Joycon-min.gif" title="Joycon_GIF" target="_blank"><img src="images/gif_Joycon-min.gif" width="100%"  alt="Joycon_GIF"/></a>
+                <li>ボリューム操作</li>
+                <p class="moji">本来このボリューム操作を完成形とし、HEWへ出典するつもりでしたが皆でアイディアを出し合っているうちにいつの間にか他の操作方法が出来上がっておりすべての操作方法の原点となった機能です。<br></p>
+                <li>マスタースレーブ操作</li>
+                <p class="moji">マスタースレーブ操作ではマスター機の関節に組み込んだボリューム抵抗を動かし 操作対象となるスレーブ機ロボットアームのモータへ 角度として受け渡すことで実現しました。<br></p>
+                <img src="images/gif_MasterSlaveOperator.gif" width="100%"  alt="MasterSlaveOperator_GIF"/></a>
+                <a href="images/gif_MasterSlave-min.gif" title="MasterSlave_GIF" target="_blank"><img src="images/gif_MasterSlave-min.gif" width="100%"  alt="MasterSlave_GIF"/></a>
+                <li>位置記憶操作</li>
+                <p class="moji">位置記憶操作はデータ構造とアルゴリズムに力を入れて制作しました。これは人間の動作を模倣し継続的に繰り返すことができます。この位置記憶操作があればシンプルな動作はすべて任せることが可能です。<br></p>
+                <a href="images/gif_LocationMemory-min.gif" title="LocationMemory_GIF" target="_blank"><img src="images/gif_LocationMemory-min.gif" width="100%"  alt="LocationMemory_GIF"/></a>
+                <br><br>
+                <li>IoT 操作</li>
+                <p class="moji">操作にはobnizOS(オブナイズ)を使用しました。obnizOSを使用することでIoT操作で一番面倒なweb Server通信のプログラム作成が不要でネットワークコネクションを作るだけで気軽にマイコンを制御できます。
+                このobnizOSは主にhtmlとjavascriptでの記述で操作ができるため少しだけWebの知識があれば誰でもモノづくりを体験することが可能です。
+                今回これらを活用しアームの操作軸となるサーボモータの制御をWeb経由のスライダーコントロールで操作出来るようにしました。<br></p>
+                <p class="CodeIoT codepen" data-height="435" data-theme-id="light" data-default-tab="html,result" data-user="hirotaka42" data-slug-hash="JjbLPqP" data-pen-title="RO42-008">
+                  <span>See the Pen <a href="https://codepen.io/hirotaka42/pen/JjbLPqP">
+                  RO42-008</a> by hirotaka42 (<a href="https://codepen.io/hirotaka42">@hirotaka42</a>)
+                  on <a href="https://codepen.io">CodePen</a>.</span>
+                </p>
+                <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+            </ol><br><!-- /.APointsub-title -->
+
+            <h3 class="APoint-title">アピールポイント2</h3>
+            <ol class="APointsub-title">
+                <li>3Dデザインを使用したロボットアームの制作</li>
+                <p class="moji">3DCADソフト Fusion360 を使用し3Dモデルデータを作成,3Dプリンタで印刷,すべての部品を手作りで制作しました。その過程で穴の位置の設置ミスや印刷クオリティの向上で四苦八苦することがありました。<br></p>
+                <table border="1" cellspacing="0" cellpadding="1">
+                <tr>
+                  <td><img src="images/3D_model01-min.png" width=100% alt="3D_model01-min"/></td>
+                  <td><img src="images/3D_model02-min.png" width=100% alt="3D_model02-min"/></td>
+                  <td><img src="images/3D_model03-min.png" width=100% alt="3D_model03-min"/></td>
+                </tr>
+                </table><br>
+
+                <table border="1" cellspacing="0" cellpadding="1">
+                <td><img src="images/3D_model04-min.png" width=100% alt="3D_model04-min"/></td>
+                  <td><img src="images/3D_model05-min.png" width=100% alt="3D_model05-min"/></td>
+                  <td><img src="images/3D_model06-min.png" width=100% alt="3D_model06-min"/></td>
+                  <td><img src="images/3D_model07-min.png" width=100% alt="3D_model07-min"/></td>
+                </tr>
+                </table><br>
+                <li>基板配線</li>
+                <p class="moji">配線については電源系統を一つにまとめできるだけ簡素化しました。また配線の再配置など柔軟に対応するべく広く一般的に使用されているJST規格のXHコネクタを採用。<br></p>
+                <table border="1" cellspacing="0" cellpadding="1">
+                <tr>
+                  <td><img src="images/img_PCB_main.jpg" width=100% alt="PCB_main"/></td>
+                  <td><img src="images/img_PCB_sub.jpg" width=100% alt="PCB_sub"/></td>
+                </tr>
+                </table><br>
+                <li>プリント基板の制作</li>
+                <p class="moji">今回残念ながら発注までは間に合いませんでしたがプリント基板を制作しました。制作した理由としては配線が多いことによる配線の付け間違えやコネクタの用途不明防止のためです。できるだけ配線をまとめれるように接続アダプタ用の基板も制作しました。<br></p>
+                <!--
+                <div class="PCBitemMain altium-ecad-viewer" data-project-src="daec2bd8-3962-44b4-ba5f-cd2a479bb7d5" data-active-view='3D' ><a href=”https://www.altium.com/viewer/” target="_blank" rel="noopener">PCB File of Hew_ArduinoMega_Shield.</a></div>
+                <div class="PCBitem altium-ecad-viewer" data-project-src="bac026b3-e806-42c2-9cc9-79dec6307724" data-active-view='3D' ><a href=”https://www.altium.com/viewer/” target="_blank" rel="noopener">PCB File of HEW-JoyStick.</a></div>
+                <div class="PCBitem altium-ecad-viewer" data-project-src="f478aa56-3e93-45de-bf79-f9e8e876f004" data-active-view='3D' ><a href=”https://www.altium.com/viewer/” target="_blank" rel="noopener">PCB File of Hew_JoyStickAdapter.</a></div>
+              -->
+              
+            </ol><br><!-- /.APointsub-title -->
+
+
+
+          </p>
+        </div><!-- /#category3 -->
+
+        <div class="category4">
+          <h3 class="sub-title">感想</h3>
+          <p class="moji">今回のHEWは例年と違いオンラインでの制作が多かったためお互いの進捗確認がうまく取れずとても苦労しました。ですが精一杯自分たちに納得の行く作品ができたのでとても良い経験になりました！<br>
+          </p>
+        </div><!-- /#category4 -->
+
+        <div class="category5">
+          <h3 class="sub-title">Photo</h3>
+          <p class="moji">写真・動画<br>
+          </p>
+        </div><!-- /#category5 -->
+
+
+
+
       </article>
 
       <!--　ここからサイドバー -->
       <aside>
-        <h3 class="sub-title">目次</h3>
-        <ul class="sub-menu">
-          <li><a href="#">お店の紹介</a></li>
-          <li><a href="#">お店の紹介</a></li>
-          <li><a href="#">お店の紹介</a></li>
-          <li><a href="#">お店の紹介</a></li>
-        </ul>
-
         <h3 class="sub-title">メンバー紹介</h3>
-        <p class="moji">
-          体に優しい
-        </p>
+        <ul class="sub-menu">
+          <li><a>洪 イ昕 / リーダー</a></li>
+          <p class="moji">
+            体に優しい
+          </p>
+          <li><a>佐藤 航</a></li>
+          <p class="moji">
+            体に優しい
+          </p>
+          <li><a>兒玉 裕貴</a></li>
+          <p class="moji">
+            体に優しい
+          </p>
+        </ul>
       </aside>
+
+
 
     </div><!-- /.APoint-contents -->
 
