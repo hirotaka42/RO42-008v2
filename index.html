@@ -132,7 +132,7 @@
 
 
 
-          <p class="moji">私達は汎用ロボットアームすべての部品を3Dモデリングで制作しました。このロボットアームの大きな特徴は関節を各所に配置することにより最大5軸ロボットアームとして起動します。主な動作としてはモノを掴む離すはもちろん左右前前後お好みの位置へ移動させることが可能です。また、様々な操作方法を実装したので操作者の好みの操作方法で動作できます。<br><br>このロボットアームのコアは Arduino Mega2560 を使用しています。なぜ Arduino UNO ではなく Mega を使用したか,これは単純にPin数の制限を受けたからです。このロボットアームの使用しているPin数は電源とGNDを除きおおよそ36Pin. 今回使用しなかった Arudino UNO のPin数は ディジタルPin 14Pin, アナログ入力 6Pin 総合計20Pin, それに引き換え ArduinoMega2560 は ディジタル 54Pin( 14本は PWM 使用可能), アナログ入力 16Pin, 総合計70Pin, このピン数はとても魅力的でした。<br><br>
+          <p class="moji">私達は3Dモデリングを活用し汎用ロボットアームを制作しました。このロボットアームの大きな特徴は関節を各所に配置することにより最大5軸ロボットアームとして起動します。主な動作としてはモノを掴む離すはもちろん左右前前後お好みの位置へ移動させることが可能です。また、様々な操作方法を実装したので操作者の好みの操作方法で動作できます。<br><br>このロボットアームのコアは Arduino Mega2560 を使用しています。なぜ Arduino UNO ではなく Mega を使用したか,これは単純にPin数の制限を受けたからです。このロボットアームの使用しているPin数は電源とGNDを除きおおよそ36Pin. Arudino UNO のPin数は ディジタル 14Pin, アナログ入力 6Pin 総合計20Pin, それに引き換え ArduinoMega2560 は ディジタル 54Pin( 14本は PWM 使用可能), アナログ入力 16Pin, 総合計70Pin, このピン数はとても魅力的でした。<br><br>
 
           操作方法は全部で5つあります。
           ジョイスティックによるリモコン操作, ボリュームによるつまみ操作, 1つの機体で他の機体を連動させて動かせるマスタースレーブ操作, 動作を記録し再生する位置記憶動作, ネットワーク経由でWeb操作をするIot操作, それぞれが各々で作りたかった操作方法で一切の妥協なく制作しました。 次のアピール項目ではこの操作方法の説明とその他取り組んだことについて説明していきます。 
@@ -153,7 +153,10 @@
             <h3 class="APoint-title">操作方法</h3>
             <ol class="APointsub-title">
                 <li>ジョイスティックによる操作</li>
-                <p class="moji">ジョイスティックによる操作を実装した理由はやはり慣れ親しんだ操作感で操作できることにあります。3DCADソフトでの設計によりパーツの交換、修正、複製などが素早く行え誰でも気軽にモノづくりを体験することが可能になります。<br></p>
+                <p class="moji">ジョイスティック操作では一般的なジョイスティックを使用した オーソドックスなコントローラーを意識してデザイン、設計をしました。
+                設計はfusion360という3DCADソフトを使用しており、本体は3Dプリンターで印刷したものになっているため、パーツの交換、修正、複製などが素早く行えます。
+                ジョイスティック間の幅やコントローラーの厚みなどは実際に販売されているコントローラーを参考にしています。
+                コントローラーでの操作は、比較的多くの人が慣れ親しんでおり、安定して直感的な操作が出来るという所が1番の利点になっています。<br></p>
                 <a href="images/gif_Joycon-min.gif" title="Joycon_GIF" target="_blank"><img src="images/gif_Joycon-min.gif" width="100%"  alt="Joycon_GIF"/></a>
                 <li>ボリューム操作</li>
                 <p class="moji">本来このボリューム操作を完成形とし、HEWへ出典するつもりでしたが皆でアイディアを出し合っているうちにいつの間にか他の操作方法が出来上がっておりすべての操作方法の原点となった機能です。<br></p>
@@ -182,7 +185,7 @@
             <h3 class="APoint-title">アピールポイント2</h3>
             <ol class="APointsub-title">
                 <li>3Dデザインを使用したロボットアームの制作</li>
-                <p class="moji">3DCADソフト Fusion360 を使用し3Dモデルデータを作成,3Dプリンタで印刷,すべての部品を手作りで制作しました。その過程で穴の位置の設置ミスや印刷クオリティの向上で四苦八苦することがありました。<br></p>
+                <p class="moji">3DCADソフト Fusion360 を使用し3Dモデルデータを作成, 3Dプリンタで印刷, すべての部品を手作りで制作しました。その過程で穴の位置の設置ミスや印刷クオリティの向上で四苦八苦することがありました。<br></p>
                 
                 <table class="tbl-img" border="1" cellspacing="0" cellpadding="1">
                 <tr>
@@ -209,12 +212,12 @@
                 </tr>
                 </table><br>
                 <li>プリント基板の制作</li>
-                <p class="moji">今回残念ながら発注までは間に合いませんでしたがプリント基板を制作しました。制作した理由としては配線が多いことによる配線の付け間違えやコネクタの用途不明防止のためです。できるだけ配線をまとめれるように接続アダプタ用の基板も制作しました。<br></p>
-                <!--
+                <p class="moji">今回残念ながら発注までは間に合いませんでしたがプリント基板を制作しました。制作した理由としては配線が多いことによる配線の付け間違えやコネクタの用途不明防止のためです。できるだけ配線をまとめれるように相互接続アダプタ用の基板も制作しました。<br></p>
+                
                 <div class="PCBitemMain altium-ecad-viewer" data-project-src="daec2bd8-3962-44b4-ba5f-cd2a479bb7d5" data-active-view='3D' ><a href=”https://www.altium.com/viewer/” target="_blank" rel="noopener">PCB File of Hew_ArduinoMega_Shield.</a></div>
                 <div class="PCBitem altium-ecad-viewer" data-project-src="bac026b3-e806-42c2-9cc9-79dec6307724" data-active-view='3D' ><a href=”https://www.altium.com/viewer/” target="_blank" rel="noopener">PCB File of HEW-JoyStick.</a></div>
                 <div class="PCBitem altium-ecad-viewer" data-project-src="f478aa56-3e93-45de-bf79-f9e8e876f004" data-active-view='3D' ><a href=”https://www.altium.com/viewer/” target="_blank" rel="noopener">PCB File of Hew_JoyStickAdapter.</a></div>
-              -->
+              
               
             </ol><br><!-- /.APointsub-title -->
 
