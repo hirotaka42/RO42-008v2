@@ -30,6 +30,12 @@ img {
 	text-indent: 1em;/*文章の文字の先頭に空白段落(インデント？)*/
 }
 
+.sub-moji{
+	margin-top: 8px;
+	text-indent: 1em;/*文章の文字の先頭に空白段落(インデント？)*/
+	font-size: 0.725rem;
+
+}
 
 /* ----- ヘッダー(ページの一番上の部分) ----- */
 .logo { /*SVG表示サイズ設定*/
