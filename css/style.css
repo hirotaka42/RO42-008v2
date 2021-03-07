@@ -30,6 +30,12 @@ img {
 	text-indent: 1em;/*文章の文字の先頭に空白段落(インデント？)*/
 }
 
+.sub-moji{
+	margin-top: 8px;
+	text-indent: 1em;/*文章の文字の先頭に空白段落(インデント？)*/
+	font-size: 0.725rem;
+
+}
 
 /* ----- ヘッダー(ページの一番上の部分) ----- */
 .logo { /*SVG表示サイズ設定*/
@@ -206,7 +212,7 @@ aside p {
 /*PCB 3D Viewer*/
 .PCBitemMain {/*6:4にしたがやり方わからず*/
 	border-radius: 0px 0px 4px 4px; /*線*/
-	height: 500px; /*線*/
+	height: 500px; /*線?*/
 	border-style: solid; /*線*/
 	border-width: 1px; /*線*/
 	border-color: rgb(241, 241, 241); /*線*/
@@ -218,7 +224,7 @@ aside p {
 
 .PCBitem {
 	border-radius: 0px 0px 4px 4px;/*線*/
-	height: 500px; /*線*/
+	height: 500px; /*線?*/
 	border-style: solid; /*線*/
 	border-width: 1px; /*線*/
 	border-color: rgb(241, 241, 241); /*線*/
