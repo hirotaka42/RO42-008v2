@@ -32,28 +32,33 @@
       <!--　ヘッダー（サイト名やサイトの内容を示す部分）　-->
       <header class="page-header wrapper">
         
-
-
-
-        <h1><a href="index.html"><img class="logo" src="images/logo.svg" alt="RO42-008"></a>
-        </h1><!-- / #logo -->
         <nav>
+          <div class="menu ">
+               <div class="bar bar1"></div>
+               <div class="bar bar2"></div>
+               <div class="bar bar3"></div>
+          </div>
       	  <!--　ナビゲーションメニュー（ヘッダー内のメインメニュー）ー-->
       	  <ul class="main-nav">
-      	   <li><a href="#page-header">Home</a></li>
+      	   <li><a href="index.html">Home</a></li>
       	   <li><a href="#category1">作品説明</a></li>
       	   <li><a href="#category3">アピールポイント</a></li>
            <li><a href="#category4">感想</a></li>
       	   <li><a href="#category5">写真・動画</a></li>
       	  </ul>
       	</nav>
-      </header><!-- / header -->
+        <script type="text/javascript">
+          const menu = document.querySelector('.menu');
+          menu.addEventListener('click', function() {
+               this.classList.toggle('toggle');
+          });
+        </script>
 
-      <!--　ここからページタイトル -->
-      
-      <div class="wrapper">
-        <h2 class="page-title">RO42-008 作品名:汎用ロボットアーム</h2>
-      </div><!-- /.wrapper-->
+
+        <h1><a href="index.html"><img class="logo" src="images/logo1.svg" alt="RO42-008"></a>
+        </h1><!-- / #logo -->
+
+      </header><!-- / header -->
 
     </div><!-- /#APoint-->
 
