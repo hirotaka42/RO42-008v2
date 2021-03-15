@@ -16,6 +16,7 @@ a { /*リンクの文字設定(マウスをのせる前)*/
 img {
 	max-width: 100%;
 }
+
 .mp4 {
 	margin-top: 14px;
 	width: 100%;
@@ -37,24 +38,77 @@ img {
 
 }
 
+
+/* menu */
+
+.menu {
+     cursor: pointer;
+     background: var(--nav-background);
+     border: none;
+     outline: none;
+     display: none;
+}
+
+.menu .bar {
+     width: 20px;
+     height: 2px;
+     background: #000;
+     border-radius: 5px;
+     opacity: 1;
+     visibility: visible;
+     transition: 0.5s ease;
+     transform-origin: left;
+}
+
+.menu .bar1 {
+     margin-bottom: 5px;
+}
+
+.menu .bar3 {
+     margin-top: 5px;
+}
+
+.menu.toggle .bar1 {
+     transform-origin: left;
+     transform: rotate(45deg);
+}
+
+.menu.toggle .bar2 {
+     opacity: 0;
+     visibility: hidden;
+}
+
+.menu.toggle .bar3 {
+     transform-origin: left;
+     transform: rotate(-45deg);
+}
+
 /* ----- ヘッダー(ページの一番上の部分) ----- */
 .logo { /*SVG表示サイズ設定*/
-	width: 100px;
 	margin-top: 14px;
+	margin-left: 20%;
+	margin-right: 20%;
+	margin-bottom: 14px;
+	text-align: center;
 }
 
 .main-nav {
 	display: flex;
 	font-size: 1.25rem;
 	text-transform: uppercase;
-	margin-top: 34px;
 	list-style: none;
 }
 .main-nav li {
-	margin-left: 36px;
+	margin-left: 16px;
+	margin-top: 14px;
+	width: 100%;
+    display: block;
+    text-align: center;
+
 }
 .main-nav a {
 	color: #432;
+
 }
 .main-nav a:hover { /*リンクの文字設定(マウスをのせた時)*/
 	text-decoration: underline; /*テキストの装飾指定(下線、上線など)(underlineは下線を引く)*/
@@ -64,6 +118,7 @@ img {
 .page-header {
 	display: flex;
 	justify-content: space-between;
+	flex-direction: column;/*横並び-->縦並びへ変更*/
 }
 
 .wrapper {
@@ -82,20 +137,10 @@ img {
 
 /* ページタイトル
 ------------------------------- */
-.page-title {
-	font-size: 3rem;
-	font-family: 'Philosopher',serif;
-	text-transform: uppercase;
-	font-weight: normal;
-}
-
 #APoint {
 	background-image: url(../images/news-bg.jpg);
 	height: 270px;/*背景画像の表示領域サイズ(数字を大きく-->下まで表示)*/
 	margin-bottom: 40px;
-}
-#APoint .page-title {
-	text-align: center;
 }
 
 /* アピールポイントコンテンツ
@@ -274,6 +319,9 @@ aside p {
 
 
 /* #photo */
+#photo {
+	z-index: 0;
+}
 #photo .swiper-my-pagination .swiper-pagination-bullet {
   width: auto;
   height: auto;
@@ -309,9 +357,6 @@ aside p {
 
 /* フッター
 ------------------------------- */
-#footer {
-	z-index: 9999;
-}
 
 footer { /*フッターの指定*/
 	background: #432;
@@ -330,16 +375,66 @@ footer p { /*フッターの文章の指定*/
 
 /* スマホ表示
 --------------------------------------------------------------------------------------- */
-@media (max-width: 600px){
-	
-	/*HEADER*/
-	.main-nav{
-		font-size: 1rem;
-		margin-top: 10px;
+@media (max-width: 640px){
+
+	/* navページ画像
+	------------------------------- */
+	#APoint {
+		background-image: url(../images/news-bg.jpg);
+		height: 140px;/*背景画像の表示領域サイズ(数字を大きく-->下まで表示)*/
+		margin-bottom: 20px;
 	}
-	.main-nav li{
-		margin: 0 20px;
+	nav {
+		margin-top: 34px;
+
 	}
+	/* navページレスポンシブ
+	------------------------------- */
+	.main-nav {
+          flex-direction: column;
+          position: fixed;
+          top: 100px;
+          left: 100%;
+          width: 300px;
+          height: 100%;
+          background: var(--nav-background);
+          margin-top: var(--nav-height);
+          transition: 0.5s ease-out;
+     }
+     .main-nav li {
+          height: var(--nav-height);
+          line-height: var(--nav-height);
+          text-align: center;
+          width: 100%;
+          height: 180px;
+          display: block;
+     }
+     .menu {
+          display: block;
+          margin-left: auto;
+     }
+
+     .menu.toggle + .main-nav {
+          transform: translateX(-100%);
+     }
+
+	/* navページレスポンシブ　ここまで
+	------------------------------- */
+
+
+
+
+	.logo { /*SVG表示サイズ設定*/
+		width: 100%;
+		margin-top: 23px;
+
+	}
+
+	.page-header {
+		margin-top: 14px;
+		flex-direction: row-reverse;/*縦並び-->横並びへ変更*/
+	}
+		
 	/*HOME*/
 	.APoint-contents{
 		margin-top: 0%;/*メインコンテンツ 表示領域 数値大きく-->下に移動*/
@@ -347,14 +442,6 @@ footer p { /*フッターの文章の指定*/
 
 	/* ここからメインコンテンツ設定
 	----------------------------- */
-	/* ナビレイアウト*/
-	.main-nav {
-		font-size: 0.625rem;/*ナビ文字サイズ*/
-	}
-	.page-header{
-		flex-direction: column;/*横並び-->縦並びへ変更*/
-		align-items: center;
-	}
 	/* メインレイアウト*/
 	.APoint-contents{
 		flex-direction: column;/*横並び-->縦並びへ変更*/
